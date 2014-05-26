@@ -1,0 +1,20 @@
+<table class="table table-bordered table-hover">
+    <thead>
+        <td>#</td>
+        <td>Nombre</td>
+        <td>codigo</td>
+        <td>Acciones</td>
+    </thead>
+    <tbody>
+        <tr  ng-repeat="sucursal in sucursales" >
+            <td>{{sucursal.idSucursal}}</td>
+            <td>{{sucursal.nombre}}</td>
+            <td>{{sucursal.codigo}}</td>
+            <td>
+                <a class="btn btn-success" href="#edit/{{sucursal.idSucursal}}" >Editar</a>
+                <a class="btn btn-warning" href="#delete/{{sucursal.idSucursal}}">Borrar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<a class="btn btn-info btn-lg" href="#add">Añadir sucursal</a>

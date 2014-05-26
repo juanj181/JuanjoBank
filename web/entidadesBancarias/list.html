@@ -1,0 +1,20 @@
+<table class="table table-bordered table-hover">
+    <thead>
+        <td>#</td>
+        <td>Nombre</td>
+        <td>codigo</td>
+        <td>Acciones</td>
+    </thead>
+    <tbody>
+        <tr  ng-repeat="entidad in entidades" >
+            <td>{{entidad.idEntidad}}</td>
+            <td>{{entidad.nombre}}</td>
+            <td>{{entidad.codigo}}</td>
+            <td>
+                <a class="btn btn-success" href="#edit/{{entidad.idEntidad}}" >Editar</a>
+                <a class="btn btn-warning" href="#delete/{{entidad.idEntidad}}">Borrar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<a class="btn btn-info btn-lg" href="#add">Añadir entidad</a>

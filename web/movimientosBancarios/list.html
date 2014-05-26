@@ -1,0 +1,20 @@
+<table class="table table-bordered table-hover">
+    <thead>
+        <td>#</td>
+        <td>Nombre</td>
+        <td>codigo</td>
+        <td>Acciones</td>
+    </thead>
+    <tbody>
+        <tr  ng-repeat="movimiento in movimientos" >
+            <td>{{movimiento.idMovimiento}}</td>
+            <td>{{movimiento.nombre}}</td>
+            <td>{{movimiento.codigo}}</td>
+            <td>
+                <a class="btn btn-success" href="#edit/{{movimiento.idMovimiento}}" >Editar</a>
+                <a class="btn btn-warning" href="#delete/{{movimiento.idMovimiento}}">Borrar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<a class="btn btn-info btn-lg" href="#add">Añadir movimiento</a>
