@@ -15,7 +15,7 @@ app.controller("MovimientosListController", function($scope, $routeParams, $http
     };
     var request = $http(parametrosPeticion);
     request.success(function(data, status, headers, config) {
-        $scope.entidades=data;
+        $scope.movimientos=data;
     });
     request.error(function(data, status, headers, config) {
 

@@ -15,11 +15,11 @@ app.controller("CuentasDeleteController", function($scope, $routeParams) {
 app.controller("CuentasListController", function($scope, $routeParams, $http) {
     var parametrosPeticion = {
         method: 'GET',
-        url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria'
+        url: 'http://localhost:8084/JuanjoBankServer/api/CuentaBancaria'
     };
     var request = $http(parametrosPeticion);
     request.success(function(data, status, headers, config) {
-        $scope.entidades=data;
+        $scope.cuentas=data;
     });
     request.error(function(data, status, headers, config) {
 

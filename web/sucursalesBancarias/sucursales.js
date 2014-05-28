@@ -15,7 +15,7 @@ app.controller("SucursalesListController", function($scope, $routeParams, $http)
     };
     var request = $http(parametrosPeticion);
     request.success(function(data, status, headers, config) {
-        $scope.entidades=data;
+        $scope.sucursales=data;
     });
     request.error(function(data, status, headers, config) {
 
