@@ -8,24 +8,18 @@ app.controller("SucursalesEditController", function($scope, $routeParams, $http)
         alert("no se han podido leer los datos");
     });
 });
-app.controller("SucursalesListController", function($scope, $routeParams) {
-    $scope.sucursales = [
-        {
-            nombre: "valencia",
-            idSucursal: 3,
-            codigo: "46"
-        },
-        {
-            nombre: "Alicante",
-            idSucursal: 7,
-            codigo: "03"
-        },
-        {
-            nombre: "Castellon",
-            idSucursal: 89,
-            codigo: "12"
-        }
-    ];
+app.controller("SucursalesListController", function($scope, $routeParams, $http) {
+    var parametrosPeticion = {
+        method: 'GET',
+        url: 'http://localhost:8084/JuanjoBankServer/api/SucursalBancaria'
+    };
+    var request = $http(parametrosPeticion);
+    request.success(function(data, status, headers, config) {
+        $scope.entidades=data;
+    });
+    request.error(function(data, status, headers, config) {
+
+    });
 
 });
 app.controller("SucursalesDeleteController", function($scope, $routeParams) {

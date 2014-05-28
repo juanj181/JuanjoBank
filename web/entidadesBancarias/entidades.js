@@ -15,7 +15,7 @@ app.controller("EntidadesListController", function($scope, $routeParams, $http) 
     var parametrosPeticion = {
         method: 'GET',
         url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria'
-    }
+    };
     var request = $http(parametrosPeticion);
     request.success(function(data, status, headers, config) {
         $scope.entidades=data;
@@ -23,7 +23,6 @@ app.controller("EntidadesListController", function($scope, $routeParams, $http) 
     request.error(function(data, status, headers, config) {
 
     });
-
 
 });
 app.controller("EntidadesAddController", function($scope, $routeParams, $http) {

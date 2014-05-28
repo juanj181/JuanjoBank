@@ -8,24 +8,19 @@ app.controller("MovimientosEditController", function($scope, $routeParams, $http
         alert("no se han podido leer los datos");
     });
 });
-app.controller("MovimientosListController",function($scope,$routeParams) {
-    $scope.movimientos=[
-        {
-            nombre:"valencia",
-            idMovimiento:10,
-            codigo:"46"
-        },
-        {
-            nombre:"Alicante",
-            idMovimiento:11,
-            codigo:"03"
-        },
-        {
-            nombre:"Castellon",
-            idMovimiento:12,
-            codigo:"12"
-        }
-    ]; 
+app.controller("MovimientosListController", function($scope, $routeParams, $http) {
+    var parametrosPeticion = {
+        method: 'GET',
+        url: 'http://localhost:8084/JuanjoBankServer/api/MovimientoBancario'
+    };
+    var request = $http(parametrosPeticion);
+    request.success(function(data, status, headers, config) {
+        $scope.entidades=data;
+    });
+    request.error(function(data, status, headers, config) {
+
+    });
+
 });
 app.controller("MovimientosDeleteController", function($scope, $routeParams) {
     $scope.idMovimiento = $routeParams.idMovimiento;
