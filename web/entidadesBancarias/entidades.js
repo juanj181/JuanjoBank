@@ -1,6 +1,8 @@
 app.controller("EntidadesEditController", function($scope, $routeParams, $http) {
-    $scope.idEntidad = $routeParams.idEntidad;
-    $http({method: 'GET', url: 'http://localhost:8084/juanjoBank/api/Usuario/5'}).
+    $scope.idEntidadBancaria = $routeParams.idEntidad;
+    $http({method: 'GET', 
+        url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria/'+$scope.idEntidadBancaria
+    }).
             success(function(data, status, headers, config) {
         $scope.entidadBancaria = data;
     }).
@@ -8,8 +10,20 @@ app.controller("EntidadesEditController", function($scope, $routeParams, $http) 
         alert("no se han podido leer los datos");
     });
 });
-app.controller("EntidadesDeleteController", function($scope, $routeParams) {
-    $scope.idEntidad = $routeParams.idEntidad;
+app.controller("EntidadesDeleteController", function($scope, $routeParams,$http) {
+    $scope.idEntidadBancaria = $routeParams.idEntidadBancaria;
+    var parametrosPeticion = {
+        method: 'DELETE',
+        url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria/'+$scope.idEntidadBancaria
+       
+    };
+    var request = $http(parametrosPeticion);
+    request.success(function(data,status,headers,config){
+        alert("Se ha borrado la id :"+$scope.idEntidadBancaria );
+    }).error(function(data,status,headers,config){
+       $scope.data = data;
+        alert("no se ha podido borrar la id "+$scope.idEntidadBancaria);
+    });
 });
 app.controller("EntidadesListController", function($scope, $routeParams, $http) {
     var parametrosPeticion = {
@@ -26,10 +40,9 @@ app.controller("EntidadesListController", function($scope, $routeParams, $http) 
 
 });
 app.controller("EntidadesAddController", function($scope, $routeParams, $http) {
-    $scope.idEntidad = $routeParams.idEntidad;
-    $http({method: 'GET', url: 'http://localhost:8084/juanjoBank/api/Usuario/5'}).success(function(data, status, headers, config) {
-        
-    }).error(function(data, status, headers, config) {
-        
-    });
+   
+   $scope.add = function (){
+       alert("he conseguido que se ejecute");
+   };
+
 });

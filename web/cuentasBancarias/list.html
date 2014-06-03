@@ -7,14 +7,15 @@
 </thead>
 <tbody>
     <tr  ng-repeat="cuenta in cuentas" >
-        <td>{{cuenta.idCuenta}}</td>
+        <td>{{cuenta.idCuentaBancaria}}</td>
         <td>{{cuenta.nombre}}</td>
-        <td>{{cuenta.codigo}}</td>
+        <td>{{cuenta.codigoCuentaBancaria}}</td>
+        <td>{{cuenta.saldo}}</td>
         <td>
-            <a class="btn btn-success" href="#edit/{{cuenta.idCuenta}}" >Editar</a>
-            <a class="btn btn-warning" href="#delete/{{cuenta.idCuenta}}">Borrar</a>
+            <a class="btn btn-success" href="#/cuentasBancarias/edit/{{cuenta.idCuentaBancaria}}" >Editar</a>
+            <a class="btn btn-warning" href="#/cuentasBancarias/delete/{{cuenta.idCuentaBancaria}}">Borrar</a>
         </td>
     </tr>
 </tbody>
 </table>
-<a class="btn btn-info btn-lg" href="#add">Añadir cuenta</a>
+<a class="btn btn-info btn-lg" href="#/cuentasBancarias/add">Añadir cuenta</a>

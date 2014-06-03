@@ -7,14 +7,14 @@
     </thead>
     <tbody>
         <tr  ng-repeat="entidad in entidades" >
-            <td>{{entidad.idEntidad}}</td>
+            <td>{{entidad.idEntidadBancaria}}</td>
             <td>{{entidad.nombre}}</td>
-            <td>{{entidad.codigo}}</td>
+            <td>{{entidad.codigoEntidadBancaria}}</td>
             <td>
-                <a class="btn btn-success" href="#edit/{{entidad.idEntidad}}" >Editar</a>
-                <a class="btn btn-warning" href="#delete/{{entidad.idEntidad}}">Borrar</a>
+                <a class="btn btn-success" href="#/entidadesBancarias/edit/{{entidad.idEntidadBancaria}}" >Editar</a>
+                <a class="btn btn-warning" href="#/entidadesBancarias/delete/{{entidad.idEntidadBancaria}}">Borrar</a>
             </td>
         </tr>
     </tbody>
 </table>
-<a class="btn btn-info btn-lg" href="#add">Añadir entidad</a>
+<a class="btn btn-info btn-lg" href="#/entidadesBancarias/add">Añadir entidad</a>

@@ -10,13 +10,13 @@ app.config(function($routeProvider) {
                 controller: "CuentasListController"
             }
     );
-    $routeProvider.when('/cuentasBancarias/edit/:idCuenta',
+    $routeProvider.when('/cuentasBancarias/edit/:idCuentaBancaria',
             {
                 templateUrl: 'cuentasBancarias/edit.html',
                 controller: "CuentasEditController"
             }
     );
-    $routeProvider.when('/cuentasBancarias/delete/:idCuenta',
+    $routeProvider.when('/cuentasBancarias/delete/:idCuentaBancaria',
             {
                 templateUrl: 'cuentasBancarias/delete.html',
                 controller: "CuentasDeleteController"
@@ -35,13 +35,13 @@ app.config(function($routeProvider) {
                 controller: "EntidadesListController"
             }
     );
-    $routeProvider.when('/entidadesBancarias/edit/:idEntidad',
+    $routeProvider.when('/entidadesBancarias/edit/:idEntidadBancaria',
             {
                 templateUrl: 'entidadesBancarias/edit.html',
                 controller: "EntidadesEditController"
             }
     );
-    $routeProvider.when('/entidadesBancarias/delete/:idEntidad',
+    $routeProvider.when('/entidadesBancarias/delete/:idEntidadBancaria',
             {
                 templateUrl: 'entidadesBancarias/delete.html',
                 controller: "EntidadesDeleteController"
@@ -61,13 +61,13 @@ app.config(function($routeProvider) {
                 controller: "SucursalesListController"
             }
     );
-    $routeProvider.when('/sucursalesBancarias/edit/:idEntidad',
+    $routeProvider.when('/sucursalesBancarias/edit/:idSucursalBancaria',
             {
                 templateUrl: 'sucursalesBancarias/edit.html',
                 controller: "SucursalesEditController"
             }
     );
-    $routeProvider.when('/sucursalesBancarias/delete/:idEntidad',
+    $routeProvider.when('/sucursalesBancarias/delete/:idSucursalBancaria',
             {
                 templateUrl: 'sucursalesBancarias/delete.html',
                 controller: "SucursalesDeleteController"
@@ -86,13 +86,13 @@ app.config(function($routeProvider) {
                 controller: "MovimientosListController"
             }
     );
-            $routeProvider.when('/movimientosBancarios/edit/:idEntidad',
+            $routeProvider.when('/movimientosBancarios/edit/:idMovimientoBancario',
             {
                 templateUrl: 'movimientosBancarios/edit.html',
                 controller: "MovimientosEditController"
             }
     );
-            $routeProvider.when('/movimientosBancarios/delete/:idEntidad',
+            $routeProvider.when('/movimientosBancarios/delete/:idMovimientoBancario',
             {
                 templateUrl: 'movimientosBancarios/delete.html',
                 controller: "MovimientosDeleteController"
