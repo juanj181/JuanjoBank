@@ -42,7 +42,17 @@ app.controller("EntidadesListController", function($scope, $routeParams, $http) 
 app.controller("EntidadesAddController", function($scope, $routeParams, $http) {
    
    $scope.add = function (){
-       alert("he conseguido que se ejecute");
-   };
-
+  //     alert("he conseguido que se ejecute");
+   
+     
+$http.post("http://localhost:8084/JuanjoBankServer/api/EntidadBancaria",  
+{"codigoEntidadBancaria":entidadBancaria.codigoEntidadBancaria,"nombre":entidadBancaria.nombre,"tipoEntidadBancaria":entidadBancaria.tipoEntidadBancaria })
+.success(function(data, status, headers, config) {
+    $scope.data = data;
+    alert("se ha introducido correctamente"+$scope.data);
+}).error(function(data, status, headers, config) {
+    $scope.status = status;
 });
+};
+});
+
