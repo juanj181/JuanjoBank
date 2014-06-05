@@ -1,30 +1,46 @@
-app.controller("EntidadesEditController", function($scope, $routeParams, $http) {
-    $scope.idEntidadBancaria = $routeParams.idEntidad;
-    $http({method: 'GET', 
-        url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria/'+$scope.idEntidadBancaria
-    }).
-            success(function(data, status, headers, config) {
+app.controller(
+        "EntidadesEditController", function($scope, $routeParams, $http) {
+    $scope.idEntidadBancaria = $routeParams.idEntidadBancaria;
+    
+    $http({method: 'GET',
+        url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria/' + $scope.idEntidadBancaria
+    }).success(function(data, status, headers, config) {
         $scope.entidadBancaria = data;
-    }).
-            error(function(data, status, headers, config) {
+    }).error(function(data, status, headers, config) {
         alert("no se han podido leer los datos");
     });
+    $scope.edit = function(){
+        $http({
+            method: 'PUT',
+            url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria/'+ $scope.idEntidadBancaria,
+            data:$scope.entidadBancaria
+        }).success(function(data, status, headers, config) {
+        $scope.entidadBancaria = data;
+    }).error(function(data, status, headers, config) {
+        alert("no se han podido actualizar los datos");
+    });
+    };
+    
+    
 });
-app.controller("EntidadesDeleteController", function($scope, $routeParams,$http) {
+
+app.controller("EntidadesDeleteController", function($scope, $routeParams, $http) {
     $scope.idEntidadBancaria = $routeParams.idEntidadBancaria;
     var parametrosPeticion = {
         method: 'DELETE',
-        url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria/'+$scope.idEntidadBancaria
-       
+        url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria/' + $scope.idEntidadBancaria
+
     };
     var request = $http(parametrosPeticion);
-    request.success(function(data,status,headers,config){
-        alert("Se ha borrado la id :"+$scope.idEntidadBancaria );
-    }).error(function(data,status,headers,config){
-       $scope.data = data;
-        alert("no se ha podido borrar la id "+$scope.idEntidadBancaria);
+    request.success(function(data, status, headers, config) {
+        alert("Se ha borrado la id :" + $scope.idEntidadBancaria);
+    }).error(function(data, status, headers, config) {
+        $scope.data = data;
+        alert("no se ha podido borrar la id " + $scope.idEntidadBancaria);
     });
 });
+
+
 app.controller("EntidadesListController", function($scope, $routeParams, $http) {
     var parametrosPeticion = {
         method: 'GET',
@@ -32,27 +48,34 @@ app.controller("EntidadesListController", function($scope, $routeParams, $http) 
     };
     var request = $http(parametrosPeticion);
     request.success(function(data, status, headers, config) {
-        $scope.entidades=data;
+        $scope.entidades = data;
     });
     request.error(function(data, status, headers, config) {
 
     });
 
 });
+
+
 app.controller("EntidadesAddController", function($scope, $routeParams, $http) {
-   
-   $scope.add = function (){
-  //     alert("he conseguido que se ejecute");
-   
-     
-$http.post("http://localhost:8084/JuanjoBankServer/api/EntidadBancaria",  
-{"codigoEntidadBancaria":entidadBancaria.codigoEntidadBancaria,"nombre":entidadBancaria.nombre,"tipoEntidadBancaria":entidadBancaria.tipoEntidadBancaria })
-.success(function(data, status, headers, config) {
-    $scope.data = data;
-    alert("se ha introducido correctamente"+$scope.data);
-}).error(function(data, status, headers, config) {
-    $scope.status = status;
-});
-};
+    $scope.entidadBancaria = {
+        codigoEntidadBancaria: null,
+        nombre: null,
+        tipoEntidadBancaria:null
+    };
+
+    $scope.add = function() {
+        //     alert("he conseguido que se ejecute");
+
+        $http.post("http://localhost:8084/JuanjoBankServer/api/EntidadBancaria",
+                $scope.entidadBancaria)
+                .success(function(data, status, headers, config) {
+            $scope.entidadBancaria = data;
+            alert("se ha introducido correctamente la entidad Bancaria con ID:" + $scope.entidadBancaria.idEntidadBancaria);
+        }).error(function(data, status, headers, config) {
+            $scope.status = status;
+            alert("error al insertar");
+        });
+    };
 });
 

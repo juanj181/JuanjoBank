@@ -1,5 +1,23 @@
-Editar la entidad con idEntidad:{{idEntidad}}
-<input ng-model="entidadBancaria.idEntidad" />
-<input ng-model="entidadBancaria.nombre" />
-<input ng-model="entidadBancaria.codigo" />
-<input ng-model="entidadBancaria.tipoEntidadBancaria" />
+<h1>Añadir entidad</h1>
+<table>
+    <tbody>
+        <tr>
+            <th>idEntidadBancaria</th>
+            <td>{{entidadBancaria.idEntidadBancaria}}</td>
+        </tr>
+        <tr>
+            <th>nombre</th>
+            <td><input data-ng-model="entidadBancaria.nombre"></td>
+        </tr>
+        <tr>
+            <th>codigo entidad</th>
+            <td><input data-ng-model="entidadBancaria.codigoEntidadBancaria"></td>
+        </tr>
+        <tr>
+            <th>tipo entidad</th>
+            <td><input data-ng-model="entidadBancaria.tipoEntidadBancaria"></td>
+        </tr>
+
+    </tbody>
+</table>
+<button class="btn" ng-click="edit()">Enviar</button>
