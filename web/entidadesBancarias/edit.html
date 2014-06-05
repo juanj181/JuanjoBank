@@ -1,21 +1,30 @@
-<h1>Añadir entidad</h1>
+<h1>Añadir cuenta</h1>
 <table>
     <tbody>
         <tr>
-            <th>idEntidadBancaria</th>
-            <td>{{entidadBancaria.idEntidadBancaria}}</td>
+            <th>idCuentaBancaria</th>
+            <td>{{cuentaBancaria.idCuentaBancaria}}</td>
+        </tr>
+
+        <tr>
+            <th>Sucursal Bancaria</th>
+            <td><input data-ng-model="cuentaBancaria.sucursalBancaria"></td>
         </tr>
         <tr>
-            <th>nombre</th>
-            <td><input data-ng-model="entidadBancaria.nombre"></td>
+            <th>numero cuenta</th>
+            <td><input data-ng-model="cuentaBancaria.numeroCuenta"></td>
         </tr>
         <tr>
-            <th>codigo entidad</th>
-            <td><input data-ng-model="entidadBancaria.codigoEntidadBancaria"></td>
+            <th>DC</th>
+            <td><input data-ng-model="cuentaBancaria.dc"></td>
         </tr>
         <tr>
-            <th>tipo entidad</th>
-            <td><input data-ng-model="entidadBancaria.tipoEntidadBancaria"></td>
+            <th>Saldo</th>
+            <td><input data-ng-model="cuentaBancaria.saldo"></td>
+        </tr>
+        <tr>
+            <th>CIF</th>
+            <td><input data-ng-model="cuentaBancaria.cif"></td>
         </tr>
 
     </tbody>

@@ -1,5 +1,28 @@
-Añadir cuenta
-<input ng-model="cuentaBancaria.idCuenta" />
-<input ng-model="cuentaBancaria.nombre" />
-<input ng-model="cuentaBancaria.codigo" />
-<input ng-model="cuentaBancaria.saldo"/>
+<h1>Añadir cuenta</h1>
+<table>
+    <tbody>
+
+        <tr>
+            <th>Sucursal Bancaria</th>
+            <td><input data-ng-model="cuentaBancaria.sucursalBancaria"></td>
+        </tr>
+        <tr>
+            <th>numero cuenta</th>
+            <td><input data-ng-model="cuentaBancaria.numeroCuenta"></td>
+        </tr>
+        <tr>
+            <th>DC</th>
+            <td><input data-ng-model="cuentaBancaria.dc"></td>
+        </tr>
+        <tr>
+            <th>Saldo</th>
+            <td><input data-ng-model="cuentaBancaria.saldo"></td>
+        </tr>
+        <tr>
+            <th>CIF</th>
+            <td><input data-ng-model="cuentaBancaria.cif"></td>
+        </tr>
+
+    </tbody>
+</table>
+<button class="btn" ng-click="add()">Enviar</button>
