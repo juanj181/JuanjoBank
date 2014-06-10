@@ -1,7 +1,6 @@
-app.controller(
-        "EntidadesEditController", function($scope, $routeParams, $http) {
+app.controller("EntidadesEditController", function($scope, $routeParams, $http) {
     $scope.idEntidadBancaria = $routeParams.idEntidadBancaria;
-    
+
     $http({method: 'GET',
         url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria/' + $scope.idEntidadBancaria
     }).success(function(data, status, headers, config) {
@@ -9,19 +8,17 @@ app.controller(
     }).error(function(data, status, headers, config) {
         alert("no se han podido leer los datos");
     });
-    $scope.edit = function(){
+    $scope.edit = function() {
         $http({
             method: 'PUT',
-            url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria/'+ $scope.idEntidadBancaria,
-            data:$scope.entidadBancaria
+            url: 'http://localhost:8084/JuanjoBankServer/api/EntidadBancaria/' + $scope.idEntidadBancaria,
+            data: $scope.entidadBancaria
         }).success(function(data, status, headers, config) {
-        $scope.entidadBancaria = data;
-    }).error(function(data, status, headers, config) {
-        alert("no se han podido actualizar los datos");
-    });
+            $scope.entidadBancaria = data;
+        }).error(function(data, status, headers, config) {
+            alert("no se han podido actualizar los datos");
+        });
     };
-    
-    
 });
 
 app.controller("EntidadesDeleteController", function($scope, $routeParams, $http) {
@@ -61,7 +58,7 @@ app.controller("EntidadesAddController", function($scope, $routeParams, $http) {
     $scope.entidadBancaria = {
         codigoEntidadBancaria: null,
         nombre: null,
-        tipoEntidadBancaria:null
+        tipoEntidadBancaria: null
     };
 
     $scope.add = function() {

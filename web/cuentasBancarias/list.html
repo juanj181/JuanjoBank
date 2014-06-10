@@ -1,16 +1,21 @@
 <table class="table table-bordered table-hover">
     <thead>
     <td>#</td>
-    <td>Nombre</td>
-    <td>codigo</td>
+    <td>Sucursal bancaria</td>
+    <td>Numero cuenta</td>
+    <td>DC</td>
+    <td>Saldo</td>
+    <td>CIF</td>
     <td>Acciones</td>
 </thead>
 <tbody>
     <tr  ng-repeat="cuenta in cuentas" >
         <td>{{cuenta.idCuentaBancaria}}</td>
-        <td>{{cuenta.nombre}}</td>
-        <td>{{cuenta.codigoCuentaBancaria}}</td>
+        <td>{{cuenta.sucursalBancaria}}</td>
+        <td>{{cuenta.numeroCuenta}}</td>
+        <td>{{cuenta.dc}}</td>
         <td>{{cuenta.saldo}}</td>
+        <td>{{cuenta.cif}}</td>
         <td>
             <a class="btn btn-success" href="#/cuentasBancarias/edit/{{cuenta.idCuentaBancaria}}" >Editar</a>
             <a class="btn btn-warning" href="#/cuentasBancarias/delete/{{cuenta.idCuentaBancaria}}">Borrar</a>

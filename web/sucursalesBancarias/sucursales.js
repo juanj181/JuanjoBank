@@ -8,6 +8,8 @@ app.controller("SucursalesEditController", function($scope, $routeParams, $http)
         alert("no se han podido leer los datos");
     });
 });
+
+
 app.controller("SucursalesListController", function($scope, $routeParams, $http) {
     var parametrosPeticion = {
         method: 'GET',
@@ -22,6 +24,8 @@ app.controller("SucursalesListController", function($scope, $routeParams, $http)
     });
 
 });
+
+
 app.controller("SucursalesDeleteController", function($scope, $routeParams) {
     $scope.idSucursal = $routeParams.idSucursal;
 });

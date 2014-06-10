@@ -1,5 +1,18 @@
-Editar la provincia con idProvincia:{{idProvincia}}
-<input ng-model="entidadBancaria.idEntidadBancaria" />
-<input ng-model="entidadBancaria.nombre" />
-<input ng-model="entidadBancaria.codigo" />
-<input ng-model="entidadBancaria.tipoEntidadBancaria" />
+<h1>Editar sucursal</h1>
+<table>
+    <tbody>
+        <tr>
+            <th>idSucursalbancaria</th>
+            <td>{{sucursalBancaria.idSucursalbancaria}}</td>
+        </tr>
+        <tr>
+            <th>Nombre sucursal</th>
+            <td><input data-ng-model="sucursalBancaria.nombreSucursalBancaria"></td>
+        </tr>
+        <tr>
+            <th>Codigo sucursal</th>
+            <td><input data-ng-model="sucursalBancaria.codigoSucursalBancaria"></td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn" ng-click="edit()">Enviar</button>

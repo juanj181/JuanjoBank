@@ -1,5 +1,28 @@
-Editar la CuentaBancaria con idCuenta:{{idCuenta}}
-<input ng-model="cuentaBancaria.idCuentaBancaria" />
-<input ng-model="cuentaBancaria.nombre" />
-<input ng-model="cuentaBancaria.codigo" />
-<input ng-model="cuentaBancaria.saldo" />
+<h1>Editar cuenta</h1>
+<table>
+    <tbody>
+        <tr>
+            <th>idCuentaBancaria</th>
+            <td>{{cuentaBancaria.idCuentaBancaria}}</td>
+        </tr>
+
+        <tr>
+            <th>numero cuenta</th>
+            <td><input data-ng-model="cuentaBancaria.numeroCuenta"></td>
+        </tr>
+        <tr>
+            <th>DC</th>
+            <td><input data-ng-model="cuentaBancaria.dc"></td>
+        </tr>
+        <tr>
+            <th>Saldo</th>
+            <td><input data-ng-model="cuentaBancaria.saldo"></td>
+        </tr>
+        <tr>
+            <th>CIF</th>
+            <td><input data-ng-model="cuentaBancaria.cif"></td>
+        </tr>
+
+    </tbody>
+</table>
+<button class="btn" ng-click="edit()">Enviar</button>

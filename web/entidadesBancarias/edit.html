@@ -1,32 +1,22 @@
-<h1>Añadir cuenta</h1>
+<h1>Editar cuenta</h1>
 <table>
     <tbody>
         <tr>
-            <th>idCuentaBancaria</th>
-            <td>{{cuentaBancaria.idCuentaBancaria}}</td>
-        </tr>
-
-        <tr>
-            <th>Sucursal Bancaria</th>
-            <td><input data-ng-model="cuentaBancaria.sucursalBancaria"></td>
+            <th>idEntidadBancaria</th>
+            <td>{{entidadBancaria.idEntidadBancaria}}</td>
         </tr>
         <tr>
-            <th>numero cuenta</th>
-            <td><input data-ng-model="cuentaBancaria.numeroCuenta"></td>
+            <th>Nombre entidad</th>
+            <td><input data-ng-model="entidadBancaria.nombre"></td>
         </tr>
         <tr>
-            <th>DC</th>
-            <td><input data-ng-model="cuentaBancaria.dc"></td>
+            <th>Codigo entidad</th>
+            <td><input data-ng-model="entidadBancaria.codigoEntidadBancaria"></td>
         </tr>
         <tr>
-            <th>Saldo</th>
-            <td><input data-ng-model="cuentaBancaria.saldo"></td>
+            <th>Tipo entidad bancaria</th>
+            <td><input data-ng-model="entidadBancaria.tipoEntidadBancaria"></td>
         </tr>
-        <tr>
-            <th>CIF</th>
-            <td><input data-ng-model="cuentaBancaria.cif"></td>
-        </tr>
-
     </tbody>
 </table>
 <button class="btn" ng-click="edit()">Enviar</button>
