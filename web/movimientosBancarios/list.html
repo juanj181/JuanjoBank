@@ -1,18 +1,24 @@
 <table class="table table-bordered table-hover">
     <thead>
         <td>#</td>
-        <td>Nombre</td>
-        <td>codigo</td>
+        <td>Tipo movimiento</td>
+        <td>Importe</td>
+        <td>Fecha</td>
+        <td>Saldo Total</td>
+        <td>Concepto</td>
         <td>Acciones</td>
     </thead>
     <tbody>
         <tr  ng-repeat="movimiento in movimientos" >
-            <td>{{movimiento.idMovimiento}}</td>
-            <td>{{movimiento.nombre}}</td>
-            <td>{{movimiento.codigo}}</td>
+            <td>{{movimiento.idMovimientoBancario}}</td>
+            <td>{{movimiento.tipoMovimientoBancario}}</td>
+            <td>{{movimiento.importe}}</td>
+            <td>{{movimiento.fecha}}</td>
+            <td>{{movimiento.saldoTotal}}</td>
+            <td>{{movimiento.concepto}}</td>
             <td>
-                <a class="btn btn-success" href="#edit/{{movimiento.idMovimiento}}" >Editar</a>
-                <a class="btn btn-warning" href="#delete/{{movimiento.idMovimiento}}">Borrar</a>
+                <a class="btn btn-success" href="#movimientosBancarios/edit/{{movimiento.idMovimientoBancario}}" >Editar</a>
+                <a class="btn btn-warning" href="#movimientosBancarios/delete/{{movimiento.idMovimientoBancario}}">Borrar</a>
             </td>
         </tr>
     </tbody>

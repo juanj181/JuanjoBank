@@ -1,4 +1,27 @@
-Añadir movimiento:
-<input ng-model="movimientosBancarios.idMovimiento" />
-<input ng-model="movimientosBancarios.nombre" />
-<input ng-model="movimientosBancarios.codigo" />
+<h1>Añadir movimiento</h1>
+<table>
+    <tbody>
+
+        <tr>
+            <th>Tipo movimiento</th>
+            <td><input data-ng-model="movimientoBancario.tipoMovimiento"></td>
+        </tr>
+        <tr>
+            <th>Importe</th>
+            <td><input data-ng-model="movimientoBancario.importe"></td>
+        </tr>
+        <tr>
+            <th>Fecha</th>
+            <td><input data-ng-model="movimientoBancario.fecha"></td>
+        </tr>
+        <tr>
+            <th>Saldo total</th>
+            <td><input data-ng-model="movimientoBancario.saldoTotal"></td>
+        </tr>
+        <tr>
+            <th>Concepto</th>
+            <td><input data-ng-model="movimientoBancario.concepto"></td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn" ng-click="add()">Enviar</button>

@@ -1,5 +1,31 @@
-Editar el movimiento bancario con idMovimiento:{{idMovimiento}}
-<input ng-model="movimientoBancario.idMovimiento" />
-<input ng-model="movimientoBancario.nombre" />
-<input ng-model="movimientoBancario.codigo" />
-<input ng-model="movimientoBancario.tipoMovimiento"/>
+<h1>Editar movimiento</h1>
+<table>
+    <tbody>
+        <tr>
+            <th>idMovimientobancario</th>
+            <td>{{movimientoBancario.idMovimientobancario}}</td>
+        </tr>
+
+        <tr>
+            <th>Tipo movimiento</th>
+            <td><input data-ng-model="movimientoBancario.tipoMovimientoBancario"></td>
+        </tr>
+        <tr>
+            <th>Importe</th>
+            <td><input data-ng-model="movimientoBancario.importe"></td>
+        </tr>
+        <tr>
+            <th>Fecha</th>
+            <td><input data-ng-model="movimientoBancario.fecha"></td>
+        </tr>
+        <tr>
+            <th>Saldo total</th>
+            <td><input data-ng-model="movimientoBancario.saldoTotal"></td>
+        </tr>
+        <tr>
+            <th>Concepto</th>
+            <td><input data-ng-model="movimientoBancario.concepto"></td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn" ng-click="edit()">Enviar</button>

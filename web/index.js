@@ -79,7 +79,7 @@ app.config(function($routeProvider) {
                 controller: "SucursalesAddController"
             }
     );
-    //*********************SUCURSALES************************
+    //*********************MOVIMIENTOS************************
     $routeProvider.when('/movimientosBancarios/list',
             {
                 templateUrl: 'movimientosBancarios/list.html',
