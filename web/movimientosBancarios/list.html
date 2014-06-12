@@ -1,3 +1,4 @@
+<h1>Movimientos Bancarios</h1>
 <table class="table table-bordered table-hover">
     <thead>
         <td>#</td>
@@ -17,10 +18,10 @@
             <td>{{movimiento.saldoTotal}}</td>
             <td>{{movimiento.concepto}}</td>
             <td>
-                <a class="btn btn-success" href="#movimientosBancarios/edit/{{movimiento.idMovimientoBancario}}" >Editar</a>
-                <a class="btn btn-warning" href="#movimientosBancarios/delete/{{movimiento.idMovimientoBancario}}">Borrar</a>
+                <a class="btn btn-success" href="#/movimientosBancarios/edit/{{movimiento.idMovimientoBancario}}" >Editar</a>
+                <a class="btn btn-warning" href="#/movimientosBancarios/delete/{{movimiento.idMovimientoBancario}}">Borrar</a>
             </td>
         </tr>
     </tbody>
 </table>
-<a class="btn btn-info btn-lg" href="#add">Añadir movimiento</a>
+<a class="btn btn-info btn-lg" href="#/movimientosBancarios/add">Añadir movimiento</a>

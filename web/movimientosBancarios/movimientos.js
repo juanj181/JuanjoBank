@@ -60,11 +60,10 @@ app.controller("MovimientosAddController", function($scope, $routeParams, $http)
         importe: null,
         fecha: null,
         saldoTotal: null,
-        concepto: null,
+        concepto: null
     };
 
     $scope.add = function() {
-        //     alert("he conseguido que se ejecute");
 
         $http.post("http://localhost:8084/JuanjoBankServer/api/MovimientoBancario",
                 $scope.movimientoBancario)
@@ -77,4 +76,3 @@ app.controller("MovimientosAddController", function($scope, $routeParams, $http)
         });
     };
 });
-
