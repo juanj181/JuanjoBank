@@ -15,6 +15,7 @@ app.controller("CuentasEditController", function($scope, $routeParams, $http) {
             data: $scope.cuentaBancaria
         }).success(function(data, status, headers, config) {
             $scope.cuentaBancaria = data;
+            alert("datos actualizados");
         }).error(function(data, status, headers, config) {
             alert("no se han podido actualizar los datos");
         });
@@ -55,7 +56,7 @@ app.controller("CuentasListController", function($scope, $routeParams, $http) {
 });
 
 app.controller("CuentasAddController", function($scope, $routeParams, $http) {
-    $scope.entidadBancaria = {
+    $scope.cuentaBancaria = {
         numeroCuenta: null,
         dc: null,
         saldo: null,

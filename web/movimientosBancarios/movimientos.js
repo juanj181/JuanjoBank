@@ -15,6 +15,7 @@ app.controller("MovimientosEditController", function($scope, $routeParams, $http
             data: $scope.movimientoBancario
         }).success(function(data, status, headers, config) {
             $scope.movimientoBancario = data;
+            alert("datos actualizados");
         }).error(function(data, status, headers, config) {
             alert("no se han podido actualizar los datos");
         });

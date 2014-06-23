@@ -15,6 +15,7 @@ app.controller("SucursalesEditController", function($scope, $routeParams, $http)
             data: $scope.sucursalBancaria
         }).success(function(data, status, headers, config) {
             $scope.sucursalBancaria = data;
+            alert("datos actualizados");
         }).error(function(data, status, headers, config) {
             alert("no se han podido actualizar los datos");
         });

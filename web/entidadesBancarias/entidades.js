@@ -15,6 +15,7 @@ app.controller("EntidadesEditController", function($scope, $routeParams, $http) 
             data: $scope.entidadBancaria
         }).success(function(data, status, headers, config) {
             $scope.entidadBancaria = data;
+            alert("datos actualizados");
         }).error(function(data, status, headers, config) {
             alert("no se han podido actualizar los datos");
         });
